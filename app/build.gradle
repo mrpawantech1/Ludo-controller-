@@ -10,13 +10,20 @@ android {
         applicationId "com.ludocontroller"
         minSdk 21
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
+        
+        // Ye line installation issue fix karti hai
+        multiDexEnabled true
     }
 
     buildTypes {
         release {
             minifyEnabled false
+        }
+        debug {
+            // Ye ensure karta hai ki debug APK install hone layak ho
+            debuggable true
         }
     }
     compileOptions {
@@ -29,4 +36,5 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.multidex:multidex:2.0.1'
 }
